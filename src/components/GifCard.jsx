@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const trimTitle = (string, limit = 30) => string.substring(0, limit)
 
 export const GifCard = ({ title, url }) => {
@@ -7,4 +9,12 @@ export const GifCard = ({ title, url }) => {
             <p>{ trimTitle(title) }</p>
         </div>
     )
+}
+
+GifCard.propTypes = {
+    title: PropTypes.string.isRequired,
+    url:   PropTypes.string.isRequired
+}
+
+GifCard.defaultProps = {
 }
